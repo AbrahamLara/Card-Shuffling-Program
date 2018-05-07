@@ -15,7 +15,6 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class CG extends CardIdentifier {
 
@@ -135,18 +134,21 @@ public class CG extends CardIdentifier {
 		container.add(p2, BorderLayout.PAGE_END);
     	
     }
-
-    static void shuffleArray(int[] ar)
+    
+    public void shuffleArray(int[] array)
     {
-    	
-      Random rnd = ThreadLocalRandom.current();
-      for (int i = ar.length - 1; i > 0; i--)
-      {
-        int index = rnd.nextInt(i + 1);
-        int a = ar[index];
-        ar[index] = ar[i];
-        ar[i] = a;
-      }
+        int index;
+        Random random = new Random();
+        for (int i = array.length - 1; i > 0; i--)
+        {
+            index = random.nextInt(i + 1);
+            if (index != i)
+            {
+                array[index] ^= array[i];
+                array[i] ^= array[index];
+                array[index] ^= array[i];
+            }
+        }
     }
     
 	public static void main(String[] args) {
