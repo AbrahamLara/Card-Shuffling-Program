@@ -8,7 +8,7 @@ There are duplicate images in the folder which will cause a mismatch in the nami
 
 # Setup
 
-Once the project has been downloaded you can now import the project in Eclipse and run the app
+Once you have successfully cloned the app you can now import the project in Eclipse and run the app
 
 # Screenshots
 
